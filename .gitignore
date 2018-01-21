@@ -30,6 +30,7 @@ target
 out
 build
 bin
+run
 
 # Other
 *.log

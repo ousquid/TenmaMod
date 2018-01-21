@@ -1,6 +1,7 @@
 package net.ousquid.tenmamod.init;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -17,8 +18,8 @@ public class ModItems {
     static Item hanma;
 
     public static void init() {
-        tenma = new ItemBasic("tenma");
-        hanma = new ItemBasic("hanma");
+        tenma = new ItemBasic("tenma").setCreativeTab(CreativeTabs.MISC).setMaxStackSize(8);
+        hanma = new ItemBasic("hanma").setCreativeTab(CreativeTabs.MISC).setMaxStackSize(1);
     }
 
     @SubscribeEvent
