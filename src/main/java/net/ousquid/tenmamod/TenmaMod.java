@@ -4,6 +4,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.ousquid.tenmamod.init.ModBlocks;
 import net.ousquid.tenmamod.init.ModItems;
 
 @Mod(
@@ -26,6 +27,7 @@ public class TenmaMod {
     public void preInit(FMLPreInitializationEvent event) {
         System.out.println(MOD_ID + ":preInit");
         ModItems.init();
+        ModBlocks.init();
     }
 
     @Mod.EventHandler
