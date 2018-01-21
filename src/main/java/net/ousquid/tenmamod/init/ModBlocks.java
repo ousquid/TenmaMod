@@ -17,25 +17,39 @@ import net.ousquid.tenmamod.blocks.BlockBasic;
 public class ModBlocks {
 
     static Block sekihidaiBlock;
+    static Block sekihihanBlock;
+    static Block sekihigakuBlock;
+    static Block sekihiBlock;
 
     public static void init() {
         sekihidaiBlock = new BlockBasic("sekihidai", Material.ROCK);
+        sekihihanBlock = new BlockBasic("sekihihan", Material.ROCK);
+        sekihigakuBlock = new BlockBasic("sekihigaku", Material.ROCK);
+        sekihiBlock = new BlockBasic("sekihi", Material.ROCK);
     }
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
-        event.getRegistry().registerAll(sekihidaiBlock);
+        event.getRegistry().registerAll(sekihidaiBlock, sekihihanBlock, sekihigakuBlock, sekihiBlock);
     }
 
     @SubscribeEvent
     public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
-        event.getRegistry().registerAll(new ItemBlock(sekihidaiBlock).setRegistryName(sekihidaiBlock.getRegistryName()));
+        event.getRegistry().registerAll(
+                new ItemBlock(sekihidaiBlock).setRegistryName(sekihidaiBlock.getRegistryName()),
+                new ItemBlock(sekihihanBlock).setRegistryName(sekihihanBlock.getRegistryName()),
+                new ItemBlock(sekihigakuBlock).setRegistryName(sekihigakuBlock.getRegistryName()),
+                new ItemBlock(sekihiBlock).setRegistryName(sekihiBlock.getRegistryName())
+        );
 
     }
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
         registerRender(Item.getItemFromBlock(sekihidaiBlock));
+        registerRender(Item.getItemFromBlock(sekihihanBlock));
+        registerRender(Item.getItemFromBlock(sekihigakuBlock));
+        registerRender(Item.getItemFromBlock(sekihiBlock));
     }
 
     public static void registerRender(Item item) {
