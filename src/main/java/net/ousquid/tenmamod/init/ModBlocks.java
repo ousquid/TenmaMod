@@ -3,6 +3,7 @@ package net.ousquid.tenmamod.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -22,10 +23,21 @@ public class ModBlocks {
     static Block sekihiBlock;
 
     public static void init() {
-        sekihidaiBlock = new BlockBasic("sekihidai", Material.ROCK);
-        sekihihanBlock = new BlockBasic("sekihihan", Material.ROCK);
-        sekihigakuBlock = new BlockBasic("sekihigaku", Material.ROCK);
-        sekihiBlock = new BlockBasic("sekihi", Material.ROCK);
+        sekihidaiBlock = new BlockBasic("sekihidai", Material.ROCK).setHardness(1.5f)
+                .setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(1.0f);
+        sekihidaiBlock.setHarvestLevel("pickaxe", 2);
+
+        sekihihanBlock = new BlockBasic("sekihihan", Material.ROCK).setHardness(1.5f)
+                .setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(1.0f);
+        sekihihanBlock.setHarvestLevel("pickaxe", 2);
+
+        sekihigakuBlock = new BlockBasic("sekihigaku", Material.ROCK).setHardness(1.5f)
+                .setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(1.0f);
+        sekihigakuBlock.setHarvestLevel("pickaxe", 2);
+
+        sekihiBlock = new BlockBasic("sekihi", Material.ROCK).setHardness(1.5f)
+                .setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(0.0f);
+        sekihiBlock.setHarvestLevel("pickaxe", 2);
     }
 
     @SubscribeEvent
