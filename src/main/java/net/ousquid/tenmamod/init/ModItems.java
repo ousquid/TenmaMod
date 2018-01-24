@@ -16,21 +16,26 @@ public class ModItems {
 
     static Item tenma;
     static Item hanma;
+    static Item starchysauce;
+
 
     public static void init() {
         tenma = new ItemBasic("tenma").setCreativeTab(CreativeTabs.MISC).setMaxStackSize(8);
         hanma = new ItemBasic("hanma").setCreativeTab(CreativeTabs.MISC).setMaxStackSize(1);
+        starchysauce = new ItemBasic("starchysauce").setCreativeTab(CreativeTabs.MISC).setMaxStackSize(64);
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().registerAll(tenma, hanma);
+        event.getRegistry().registerAll(tenma, hanma, starchysauce);
     }
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
         registerRender(tenma);
         registerRender(hanma);
+        registerRender(starchysauce);
+
     }
 
     private static void registerRender(Item item) {
