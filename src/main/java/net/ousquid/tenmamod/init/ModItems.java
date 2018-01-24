@@ -28,8 +28,7 @@ public class ModItems {
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().registerAll(tenma, hanma, starchysauce);
-        event.getRegistry().registerAll(tenma, hanma, rice);
+        event.getRegistry().registerAll(tenma, hanma, starchysauce, rice);
     }
 
     @SubscribeEvent
